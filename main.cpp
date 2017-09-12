@@ -4,7 +4,7 @@
 using namespace std;
 int main()
 {
- std::cout<<"Testing Graph object creation";
+ std::cout<<"Testing Graph object creation\n";
    int adjcMat[][6]={\
                         {0, 1, 0, 0, 1, 1},\
                         {1, 0, 0, 1, 1, 0},\
@@ -24,6 +24,9 @@ int main()
     mits::Graph g(6, 8, vnames, enames, pAdjcMat, mits::ADJACENCY_MATRIX);
     g.printAdjcMat();
     cout<<endl;
+
+    cout<<"\n"<<g.getDegree(3)<<"\n";
+    cout<<"\n"<<g.isAdjacent(4,6)<<"\n";
 
 
 

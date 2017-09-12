@@ -13,8 +13,8 @@ bool mits::BitMapMatrix::getBit(int i, int j){
 	int k=nvertex*i+j;
 	int b=k/8;
 	int off=k%8;
-	int mask=pow(2,8-off);
-	if(vbitmap[b]&mask==mask)
+	int mask=pow(2,7-off);
+	if((vbitmap[b]&mask)==mask)
 		return 1;
 	else 
 		return 0;
@@ -25,7 +25,7 @@ void mits::BitMapMatrix::setBit(int i, int j){
 	int k=nvertex*i+j;
 	int b=k/8;
 	int off=k%8;
-	int mask=pow(2,8-off);
+	int mask=pow(2,7-off);
 	vbitmap[b]=vbitmap[b]|mask;
  
 }
@@ -34,7 +34,7 @@ void mits::BitMapMatrix::resetBit(int i, int j){
         int k=nvertex*i+j;
 	int b=k/8;
 	int off=k%8;
-	int mask=pow(2,8-off); 
+	int mask=pow(2,7-off); 
         vbitmap[b]&=(~mask);
 }
 
